@@ -1,13 +1,11 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-// import Home from "./screen/home";
-// import About from "./screen/about";
-// import Interests from "./screen/interests";
-// import Contacts from "./screen/contacts";
-import All from "./screen/all";
+import Home from "./screen/Home";
+import Jalousie from "./screen/Jalousie";
+
 const colors: string[] = ["#916d86", "#d690c1", "#7f5d97"];
-const INTERVAL = 3000;
+// const INTERVAL = 3000;
 
 export default function App() {
     let [menu, setMenu] = useState("massage");
@@ -26,7 +24,8 @@ export default function App() {
 
     useEffect(() => {
         const overlayList: NodeListOf<HTMLElement> | null =
-            document.querySelectorAll(".line, .sreda-main");
+            document.querySelectorAll(".main");
+
         function changeBG() {
             overlayList &&
                 overlayList.forEach((overlay) => {
@@ -34,7 +33,7 @@ export default function App() {
                 });
         }
 
-        setInterval(changeBG, INTERVAL);
+        // setInterval(changeBG, INTERVAL);
 
         function randomcolor() {
             return colors[Math.floor(Math.random() * colors.length)];
@@ -43,37 +42,37 @@ export default function App() {
     }, []);
     return (
         <div className="App">
-            <div className="line rainbow"></div>
-            <div className="sreda-page__overlay">
-                <div className="sreda-page">
-                    {/* <div className="sreda-nav sreda-nav--left">
-                        <nav className="nav">
-                            <ul className="menu">
-                                <li className="menu-item">
-                                    <span
-                                        className="menu-link"
-                                        onClick={() => {
-                                            setMenu("massage");
-                                        }}
-                                    >
-                                        massage
-                                    </span>
-                                </li>
-                                <li className="menu-item">
-                                    <span
-                                        className="menu-link"
-                                        onClick={() => {
-                                            setMenu("me");
-                                        }}
-                                    >
-                                        me
-                                    </span>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+            <div className="page__overlay">
+                <div className="page">
+                    {/* 
+                        <div className="nav nav--left">
+                            <nav className="nav">
+                                <ul className="menu">
+                                    <li className="menu-item">
+                                        <span
+                                            className="menu-link"
+                                            // onClick={() => {
+                                            //     setMenu("massage");
+                                            // }}
+                                        >
+                                            one
+                                        </span>
+                                    </li>
+                                    <li className="menu-item">
+                                        <span
+                                            className="menu-link"
+                                            // onClick={() => {
+                                            //     setMenu("me");
+                                            // }}
+                                        >
+                                            two
+                                        </span>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
 
-                    <div className="sreda-nav sreda-nav--right sreda-nav--me">
+                    <div className="nav nav--right nav--me">
                         <nav className="nav">
                             <ul className="menu">
                                 <li className="menu-item">
@@ -106,15 +105,13 @@ export default function App() {
                         </nav>
                     </div> */}
 
-                    <div className="sreda-main">
-                        <All></All>
-
-                        {/* <Routes>
-                            <Route index element={<Home />}></Route>
-                            <Route path="about" element={<About />} />
-                            <Route path="contacts" element={<Contacts />} />
-                            <Route path="interests" element={<Interests />} />
-                        </Routes> */}
+                    <div className="main">
+                        <div className="screen">
+                            <Routes>
+                                <Route index element={<Home />}></Route>
+                                <Route path="jalousie" element={<Jalousie />} />
+                            </Routes>
+                        </div>
                     </div>
                 </div>
             </div>
