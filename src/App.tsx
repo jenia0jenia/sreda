@@ -1,8 +1,8 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-import Home from "./screen/Home";
-import Jalousie from "./screen/Jalousie";
+import Home from "./pages/Home";
+import Jalousie from "./screens/Jalousie";
 
 const colors: string[] = ["#916d86", "#d690c1", "#7f5d97"];
 // const INTERVAL = 3000;
@@ -43,7 +43,7 @@ export default function App() {
     return (
         <div className="App">
             <div className="page__overlay">
-                <div className="page">
+                {/* <div className="page"> */}
                     {/* 
                         <div className="nav nav--left">
                             <nav className="nav">
@@ -106,14 +106,14 @@ export default function App() {
                     </div> */}
 
                     <div className="main">
-                        <div className="screen">
+                        {/* <div className="screen"> */}
                             <Routes>
                                 <Route index element={<Home />}></Route>
                                 <Route path="jalousie" element={<Jalousie />} />
                             </Routes>
-                        </div>
+                        {/* </div> */}
                     </div>
-                </div>
+                {/* </div> */}
             </div>
             <header className="App-header">
                 {/* <img src={logo} className="App-logo" alt="logo" /> */}

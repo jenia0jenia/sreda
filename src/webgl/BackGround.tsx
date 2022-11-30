@@ -1,4 +1,4 @@
-import BackGroundClass, { vertex, fragment } from "./background-class";
+import BackGroundClass, { vertex, fragment } from "../classes/background-class";
 
 function waitingCanvas() {
     const canvas = document.getElementById("background");
