@@ -1,21 +1,18 @@
-import VideoClass from "../classes/video-class";
 
+import VideoClass from "../classes/video-class";
 function waitingCanvas() {
-    const canvas = document.getElementById("video")
+    const canvas = document.getElementById("video");
     if (!canvas) {
         setTimeout(waitingCanvas, 1000);
         return;
     }
 
-    
     const video = new VideoClass({
-        video: "video"
+        video: "video",
     });
-
 }
 
-waitingCanvas()
-
+waitingCanvas();
 
 export default function Video() {
     return (

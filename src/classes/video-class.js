@@ -77,7 +77,6 @@ export default class VideoClass {
         //     console.log("playing");
         // });
 
-        console.log(this.alphaVideo.readyState);
         if (this.alphaVideo.readyState > 3) {
             this.alphaVideo.play();
         }

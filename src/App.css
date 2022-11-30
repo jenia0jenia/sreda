@@ -4,6 +4,7 @@
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    align-self: center;
 }
 
 .video-place video {
@@ -24,6 +25,32 @@
 
 .video-voice.voice-disabled {
     background-image: url("./img/icons/audio_enabled.png");
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: -20px;
+    border-radius: 50%;
+    padding: 20px 20px;
+    background-color: #fff;
+    transition: background-color .5s ease;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: hotpink;
+}
+
+.button--left {
+    left: -10px;
+}
+
+.button--right {
+    right: -10px;
 }
 
 .background-canvas {
