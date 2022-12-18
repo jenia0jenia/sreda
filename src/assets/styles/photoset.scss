@@ -1,0 +1,33 @@
+.photoset {
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    gap: 48px;
+    will-change: transform;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-out;
+    font-size: 0;
+    padding-right: 20%;
+
+    &__img {
+        width: 300px;
+        transition: .3s filter linear, 1s -webkit-filter linear;
+        border-radius: 10px;
+    }
+
+    &__wrapper {
+        padding-left: 25vw;
+        margin: 48px 0;
+        
+        @media screen and (max-width: 900px) {
+            overflow-x: auto;
+        }
+
+        @media screen and (min-width: 899px) {}
+    }
+}
+
+video.photoset__img {
+    width: 221px;
+    height: 100%;
+}

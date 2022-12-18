@@ -1,0 +1,30 @@
+
+.nav {
+    color: white;
+    flex-basis: calc(100% / 4);
+    width: calc(100% / 4);
+    max-width: 300px;
+}
+
+.nav--left {
+    order: -1;
+}
+
+.nav--right {
+    order: 1;
+}
+
+.nav {
+    display: none;
+}
+
+.nav-left {}
+
+.nav-right {}
+
+
+@media screen and (min-width: 1024px) {
+    .nav {
+        display: block;
+    }
+}

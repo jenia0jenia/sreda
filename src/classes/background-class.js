@@ -183,7 +183,7 @@ export const fragment = `
 
     
     void draw_texture() {
-        gl_FragColor = GREEN;
+        gl_FragColor = vec4(0.812,0.682,0.616,0.9);
         
         vec2 uv = vec2(
             gl_FragCoord.x / u_canvas_width,
@@ -194,12 +194,12 @@ export const fragment = `
         float dy = abs(u_canvas_height - gl_FragCoord.y - u_mouse_y);
         float r2 = dx * dx + dy * dy;
         
-        bool is_in_cursor = (r2 < 200.0);
+        // bool is_in_cursor = (r2 < 200.0);
         
-        if (is_in_cursor) {
-            gl_FragColor = BLACK;
-            return;
-        }
+        // if (is_in_cursor) {
+        //     gl_FragColor = BLACK;
+        //     return;
+        // }
         
         float sin_1 = sin(uv.y + u_time);
         float sin_2 = sin(uv.y + u_time);
@@ -214,7 +214,7 @@ export const fragment = `
                 && (uv.x < line_path_x + 0.02);
             
             if (is_in_line) {
-                gl_FragColor = WHITE;
+                gl_FragColor = vec4(0.937,0.557,0.482,1.0);
             }
             
             line_path_x += translate_x;

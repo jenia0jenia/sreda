@@ -1,0 +1,25 @@
+.business-card {
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 12rem;
+        font-weight: 100;
+        letter-spacing: 1rem;
+    }
+
+    &__img {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0.96;
+    }
+}

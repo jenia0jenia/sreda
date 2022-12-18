@@ -1,0 +1,195 @@
+@use "./fonts.scss";
+@use "./nav.scss";
+@use "./air.scss";
+@use "./video.scss";
+@use "./photoset.scss";
+@use "./bubble.scss";
+@use "./figure.scss";
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    &.about,
+    &.massage {}
+}
+
+.massage-page {}
+
+.main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+    background: repeating-linear-gradient(to left, #e9c8b7, #e9c8b7 7%, #ef8e7b 7%, #ef8e7b 10%);
+    transform-style: preserve-3d;
+
+    &-body {
+        transform-style: preserve-3d;
+    }
+}
+
+.screen {
+    margin: 0 auto;
+    // min-height: 600px;
+}
+
+.page__overlay {
+    /* background-color: var(--second-color); */
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -50px;
+    border-radius: 50%;
+    padding: 20px 20px;
+    background-color: #fff;
+    transition: background-color .5s ease;
+    justify-content: center;
+    transition: all .5s ease;
+}
+
+.button:hover {
+    background-color: hotpink;
+}
+
+.button--left {
+    transform: translate(-50%, 0);
+    left: 0;
+}
+
+.button--right {
+    transform: translate(-50%, 0);
+    left: 100%;
+}
+
+.background-canvas {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 900px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.main {}
+
+/* .menu */
+.menu-link {
+    display: inline-block;
+    color: white;
+    position: relative;
+    line-height: 2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-link::after {
+    content: "";
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translate(-50%, 0);
+    transition: all 0.5s ease;
+    background-color: white;
+}
+
+.menu-link:hover::after {
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+}
+
+
+/* // .menu */
+
+
+
+@media screen and (min-width: 899px) {
+    .main {}
+}
+
+.contacts {
+    width: 100%;
+    height: 100vh;
+}
+
+@media screen and (max-width: 680px) {
+    body {
+        overflow: auto;
+    }
+
+    .content {
+        padding: 0 10px;
+    }
+}
+
+
+/* Jelly Blob Div */
+.jelly-blob {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background-color: lightcoral;
+    border-radius: 50%;
+    transform-origin: center center;
+    will-change: width, height, transform, border;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.videohands {
+    width: 100%;
+    position: relative;
+
+    video {
+        visibility: hidden;
+    }
+}
+
+.videohands_one {
+    text-align: right;
+}
+
+.videohands_2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+
+    & canvas {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: scale(-1, 1);
+    }
+}

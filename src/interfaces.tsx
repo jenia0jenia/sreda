@@ -21,5 +21,14 @@ export interface IBubble {
     top: number,
     right: number,
     bottom: number,
-    // color: string
 }
+
+export interface IAnimationOptions {
+    duration: number
+    timing(timeFraction: number): any
+    draw(progress: number): any
+}
+
+// export interface IVideoWithAlphaProps {
+
+// }

@@ -1,0 +1,51 @@
+.bubble {
+    width: 90px;
+    height: 90px;
+    display: block;
+    line-height: 90px;
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    transform: translate(-100%, 0);
+    text-align: center;
+    color: transparent;
+    border-radius: 50%;
+    opacity: .5;
+    will-change: transform;
+    white-space: nowrap;
+    transition: opacity .5s ease;
+
+    &-words__wrapper {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("/assets/media/photo/massage/straight_body_and_hands.jpg");
+        overflow: hidden;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &:hover {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .bubble-words {
+        &__wrapper {
+            background-size: 50%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 680px) {
+
+    .bubble {
+        width: 75px !important;
+        height: 50px !important;
+        line-height: 50px;
+        font-size: 13px;
+    }
+}

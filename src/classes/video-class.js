@@ -1,6 +1,11 @@
 export default class VideoClass {
     constructor(options) {
         this.options = options;
+
+        if (!this.options.ratio) {
+            this.options.ratio = 1
+        }
+
         this.init();
         this.fps = 60;
         this.then = Date.now();
@@ -8,15 +13,19 @@ export default class VideoClass {
     }
 
     init() {
-        // let _t = this;
-        // console.log("init");
         // console.log(this);
-        
+
         this.alphaVideo = document.getElementById(this.options.video);
-        // console.log(this.options);
-        const videoPlace = document.querySelector("#video-place");
-        const voiceButton = document.querySelector(".video-voice");
-        const voiceDisabledClass = "voice-disabled";
+        const videoPlace = this.alphaVideo.parentElement;
+
+        if (this.options.withAudio) {
+            const voiceButton = document.querySelector(".video-voice");
+            const voiceDisabledClass = "voice-disabled";
+
+            videoPlace.addEventListener("click", (event) => {
+                voiceButton.classList.toggle(voiceDisabledClass);
+            });
+        }
 
         this.bufferCanvas = document.createElement("canvas");
         this.buffer = this.bufferCanvas.getContext("2d", {
@@ -26,7 +35,6 @@ export default class VideoClass {
 
         this.outputCanvas = document.createElement("canvas");
         this.output = this.outputCanvas.getContext("2d");
-        this.ratio = 0.5;
         this.playing = false;
 
         videoPlace.appendChild(this.outputCanvas);
@@ -83,12 +91,10 @@ export default class VideoClass {
 
         videoPlace.addEventListener("click", (event) => {
             this.alphaVideo.muted = !this.alphaVideo.muted;
-            voiceButton.classList.toggle(voiceDisabledClass);
         });
     }
 
     processFrame = () => {
-        // let _t = this;
         // console.log("process frame");
         // console.log(this.width);
         if (!this.width) {
@@ -106,23 +112,23 @@ export default class VideoClass {
             this.fullHeight,
             0,
             0,
-            this.width * this.ratio,
-            this.fullHeight * this.ratio
+            this.width * this.options.ratio,
+            this.fullHeight * this.options.ratio
         );
 
         const image = this.buffer.getImageData(
             0,
             0,
-            this.width * this.ratio,
-            this.height * this.ratio
+            this.width * this.options.ratio,
+            this.height * this.options.ratio
         ); // get ImageData of the top half
 
         const imageData = image.data; // get the array of pixels from that ImageData
         const alphaData = this.buffer.getImageData(
             0,
-            this.height * this.ratio,
-            this.width * this.ratio,
-            this.height * this.ratio
+            this.height * this.options.ratio,
+            this.width * this.options.ratio,
+            this.height * this.options.ratio
         ).data; // get ImageData pixels of the bottom half
 
         // Every fourth value in ImageData arrays are the alpha values, so we apply the value from the bottom half mask.
@@ -136,7 +142,6 @@ export default class VideoClass {
 
     // While video is playing, update the canvas every frame
     maskVideo = () => {
-        // let _t = this;
         if (this.playing) {
             requestAnimationFrame(this.maskVideo);
 
@@ -152,16 +157,16 @@ export default class VideoClass {
 
     resize = (event) => {
         // console.log("resize");
-        this.width = this.alphaVideo.videoWidth;
-        this.bufferCanvas.width = this.width * this.ratio;
-        this.buffer.width = this.width * this.ratio;
-        
+        this.width = this.options.width || this.alphaVideo.videoWidth;
+        this.bufferCanvas.width = this.width * this.options.ratio;
+        this.buffer.width = this.width * this.options.ratio;
+
         this.fullHeight = this.alphaVideo.videoHeight;
-        this.bufferCanvas.height = this.fullHeight * this.ratio;
-        this.buffer.height = this.fullHeight * this.ratio;
-        
-        this.height = this.fullHeight * this.ratio;
-        this.outputCanvas.height = this.height * this.ratio;
-        this.outputCanvas.width = this.width * this.ratio;
+        this.bufferCanvas.height = this.fullHeight * this.options.ratio;
+        this.buffer.height = this.fullHeight * this.options.ratio;
+
+        this.height = this.options.height || this.fullHeight * this.options.ratio;
+        this.outputCanvas.height = this.height * this.options.ratio;
+        this.outputCanvas.width = this.width * this.options.ratio;
     };
 }

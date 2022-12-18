@@ -1,0 +1,26 @@
+.video-place {
+    &__wrapper {
+        position: relative;
+        text-align: center;
+        padding: 20px;
+        max-width: 203px;
+        margin: 0 auto;
+        align-self: center;
+    }
+}
+
+.video-voice {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-size: 48px 48px;
+    background-position: center;
+    background-image: url("/assets/img/icons/audio_disabled.png");
+
+    &.voice-disabled {
+        background-image: url("/assets/img/icons/audio_enabled.png");
+    }
+}

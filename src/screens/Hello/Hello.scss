@@ -1,0 +1,69 @@
+.hello {
+    --zaura-height: 443px;
+    
+    height: 100vh;
+    font-size: 0;
+    position: relative;
+    transform-style: preserve-3d;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    &__zaura {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 100%);
+        transition: transform .5s ease .5s;
+
+        &__img {
+            max-width: 333px;
+        }
+    }
+
+    &__prayerhands {
+        max-width: 150px;
+        position: absolute;
+        left: 50%;
+        bottom: calc(var(--zaura-height) + 20px);
+        transform: translateZ(-0.8px) translateX(230px) scale(1.6);
+        object-fit: contain;
+    }
+
+    &__declaration {
+        max-width: 150px;
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        transform: translateZ(-0.3px) translateX(330px) scale(1.2);
+        object-fit: contain;
+    }
+
+    &__lump {
+        max-width: 150px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: calc(var(--zaura-height) + 20px);
+        transform: translateZ(-0.8px) translateX(-360px) scale(1.6);
+        object-fit: contain;
+
+        &:first-child {
+            z-index: 1;
+        }
+
+        &:first-child:hover {
+            opacity: 0;
+        }
+    }
+    
+    &.is-open {
+        
+        & .hello__zaura {
+            transform: translate(-50%, 0);
+        }
+    }
+    
+    @media screen and (min-width: 899px) {
+    }
+
+}

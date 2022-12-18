@@ -1,24 +1,16 @@
+import { useEffect } from "react";
 import BackGroundClass, { vertex, fragment } from "../classes/background-class";
 
-function waitingCanvas() {
-    const canvas = document.getElementById("background");
-    if (!canvas) {
-        setTimeout(waitingCanvas, 1000);
-        return;
-    }
-
-    const bg = new BackGroundClass({
-        canvas: "background",
-        shaders: {
-            vertex,
-            fragment,
-        },
-    });
-}
-
-waitingCanvas();
-
 export default function BackGround() {
+    useEffect(() => {
+        const bg = new BackGroundClass({
+            canvas: "background",
+            shaders: {
+                vertex,
+                fragment,
+            },
+        });
+    }, []);
     return (
         <>
             <canvas id="background" className="background-canvas"></canvas>

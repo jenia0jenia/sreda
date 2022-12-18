@@ -1,40 +1,50 @@
+import { useEffect } from "react";
+import { Photoset } from "../classes/animation";
+const PhotoSetID = 'PhotoSet'
+
 const photoSetData = [
-    require("../media/photo/photoset/1.jpg"),
-    require("../media/photo/photoset/2.jpg"),
-    require("../media/photo/photoset/3.jpg"),
-    require("../media/photo/photoset/4.jpg"),
-    require("../media/photo/photoset/5.jpg"),
+    require("../assets/media/photo/photoset/1.jpg"),
+    require("../assets/media/photo/photoset/2.jpg"),
+    require("../assets/media/photo/photoset/3.jpg"),
+    require("../assets/media/photo/photoset/4.jpg"),
+    require("../assets/media/photo/photoset/5.jpg"),
 ]
 
 export default function PhotoSet() {
+    useEffect(() => {
+        const photoset = new Photoset(PhotoSetID);
+        return () => {
+            photoset.destroy()
+        }
+    }, [])
+
     return (
         <>
-            <div className="photo-set__wrapper" onMouseMove={(event: any) => {
-                const photoSet = document.getElementById('PhotoSet')!
-                const photos = photoSet.querySelectorAll<HTMLElement>('img.photo-set__img')
-                photoSet.style.transform = `translate3d(${-event.clientX / document.body.clientWidth * 100}vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
-                photos.forEach((elem, i) => {
-                    // elem.style.filter = `contrast(${100 + event.clientX / document.body.clientWidth * 100}%)`
-                    elem.style.filter = `sepia(${100 - event.clientX / document.body.clientWidth * 100}%)`
-                })
-            }}>
-                <div id="PhotoSet" className="photo-set">
+            <div id={PhotoSetID} className="photoset__wrapper">
+                <div className="photoset">
                     {photoSetData && photoSetData.map((photo, i) => {
                         return (
-                            <div className="photo-set__item" key={i} /*style={{filter: `invert(${100 - 20 * i}%)`}}*/>
-                                <img className="photo-set__img" src={photo} alt={`массаж номер ${i}`} onMouseMove={(event) => {
-                                    // console.log(event);
-
-                                    // const photos = Array(5).fill(document.querySelectorAll('img.photo-set__img'))
-                                    // console.log(photos);
-
-                                    // photos.forEach((elem, i) => {
-                                    //     elem.style.filter = `invert(${event.clientX / document.body.clientWidth * 100}%)`
-                                    // })
-                                }} />
+                            <div className="photoset__item" key={i} /*style={{filter: `invert(${100 - 20 * i}%)`}}*/>
+                                <img className="photoset__img" src={photo} alt={`массаж номер ${i}`} loading="lazy" />
                             </div>
                         )
                     })}
+                    <div className="photoset__item">
+                        <video className="photoset__img" loop muted autoPlay>
+                            <source
+                                src={require("../assets/media/video/back.mp4")}
+                                type="video/mp4"
+                            />
+                            {/* <source
+                                src={require("../assets/media/video/back.webm")}
+                                type="video/webm"
+                            />
+                            <source
+                                src={require("../assets/media/video/back.ogv")}
+                                type="video/ogg"
+                            /> */}
+                        </video>
+                    </div>
                 </div>
             </div>
         </>

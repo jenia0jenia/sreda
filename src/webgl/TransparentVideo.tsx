@@ -1,4 +1,4 @@
-import TransparentVideoClass from "../classes/transparentVideo-class";
+import TransparentVideoClass from "../classes/transparent-video-class";
 
 const player = new TransparentVideoClass({
     width: 320,

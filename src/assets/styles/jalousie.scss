@@ -1,0 +1,69 @@
+.jalousie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 12%;
+
+    &__img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__wrapper {
+        transform-style: preserve-3d;
+        height: 100vh;
+    }
+
+    &__overlay {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--second-color);
+        /* background: radial-gradient(
+            at 60% bottom,
+            var(--base-color),
+            var(--second-color)
+            ); */
+        transition: background-color 0.5s ease;
+        text-shadow: 2px 2px 5px #000000a8;
+    }
+
+    &__content {
+        position: relative;
+        padding: 0 20px;
+    }
+
+    &__title {
+        position: relative;
+        margin: 0;
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    .jalousie {
+        width: 100%;
+        height: 100%;
+
+        &__overlay {
+            padding: 60px 0;
+            height: 100%;
+        }
+
+        &__wrapper {
+            display: block;
+        }
+    }
+
+}
+
+@media screen and (min-width: 679px) {
+    .jalousie__title,
+    .jalousie__desc {
+        color: white;
+        opacity: 0;
+        font-size: 0;
+    }
+}
