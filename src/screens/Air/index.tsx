@@ -1,4 +1,5 @@
-import HandsTwo from "../screens/HandsTwo";
+import HandsTwo from "../../components/HandsTwo";
+import "./Air.scss"
 
 export default function About({ text = '', video = false }) {
     return (

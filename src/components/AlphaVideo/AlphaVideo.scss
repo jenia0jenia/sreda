@@ -1,11 +1,9 @@
 .video-place {
-    &__wrapper {
-        position: relative;
-        text-align: center;
-        padding: 20px;
-        max-width: 203px;
-        margin: 0 auto;
-        align-self: center;
+    position: relative;
+    margin: 0 auto;
+
+    & video {
+        display: none;
     }
 }
 

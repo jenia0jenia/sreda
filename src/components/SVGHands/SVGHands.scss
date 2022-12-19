@@ -14,5 +14,6 @@
         left: 50%;
         bottom: 0;
         transform: translateX(-50%);
+        transition: transform .2s ease;
     }
 }

@@ -1,5 +1,5 @@
 import Intro from "../screens/Intro";
-import BackGround from "../webgl/BackGround";
+import BackGround from "../components/BackGround";
 
 import MouseMoveClass from "../classes/mouse-move-class"
 import { useEffect } from "react";
