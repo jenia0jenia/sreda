@@ -1,11 +1,12 @@
-.monstera {
+.StoryTwo {
     --zaura-height: 443px;
 
-    height: 100vh;
+    height: 80vh;
     font-size: 0;
     position: relative;
     transform-style: preserve-3d;
     max-width: 1000px;
+    min-height: 700px;
     margin: 0 auto;
 
     &__zaura {
@@ -20,19 +21,18 @@
         }
     }
 
-    &__plant {
-        max-width: 150px;
+    &__oil {
+        width: 90px;
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateZ(-1.4px) translateX(-490px) scale(3.6);
-        object-fit: contain;
+        left: 14%;
+        bottom: 10%;
+        transform: translateZ(-0.5px);
     }
 
 
     &.is-open {
         
-        & .monstera__zaura {
+        & .StoryTwo__zaura {
             transform: translate(-50%, 0);
         }
     }

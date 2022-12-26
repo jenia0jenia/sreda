@@ -4,6 +4,7 @@ import Kampos from './kampos.js';
 import Ticker from './ticker.js';
 
 const MAX_WIDTH = 854;
+const muteClass = "is-disabled"
 
 export default class WixAlphaClass {
   constructor(targetSelector, mediaSelector) {
@@ -23,6 +24,7 @@ export default class WixAlphaClass {
     this.kampos = new Kampos$1({ target: this.target, effects: this.fx });
     this.fxEnabled = true;
     this.media.addEventListener('canplay', this.canPlay, { once: true });
+    this.media.parentElement.addEventListener('click', this.toggleAudio);
   }
 
 
@@ -125,5 +127,10 @@ export default class WixAlphaClass {
   canPlay = () => {
     this.play();
     this.draw();
+  }
+
+  toggleAudio = (e) => {
+    this.media.muted = !this.media.muted;
+    e.currentTarget.classList.toggle(muteClass)
   }
 }

@@ -1,0 +1,14 @@
+.air {
+    padding: 48px 0;
+    text-align: center;
+    position: relative;
+
+    &__overlay {
+        background-color: #7b2e8f;
+    }
+
+    &__text {
+        font-size: 28px;
+    }
+    
+}

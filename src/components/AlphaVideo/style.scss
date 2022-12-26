@@ -1,0 +1,32 @@
+.video-place {
+    position: relative;
+    margin: 0 auto;
+
+    & video {
+        display: none;
+    }
+
+    & canvas {
+
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url("../../assets/img/icons/sound_off.svg");      
+    }
+    
+    &.is-disabled {
+        &::after {
+            background-image: url("../../assets/img/icons/sound_on.svg");
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import Intro from "../screens/Intro";
+import Intro from "../components/Intro";
 import BackGround from "../components/BackGround";
 
 import MouseMoveClass from "../classes/mouse-move-class"

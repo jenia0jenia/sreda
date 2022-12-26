@@ -1,0 +1,26 @@
+.menu-link {
+    display: inline-block;
+    color: white;
+    position: relative;
+    line-height: 2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-link::after {
+    content: "";
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translate(-50%, 0);
+    transition: all 0.5s ease;
+    background-color: white;
+}
+
+.menu-link:hover::after {
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+}

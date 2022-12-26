@@ -1,0 +1,52 @@
+$min-width-card: 600px;
+
+.massage {
+    font-size: 14px;
+    padding: 24px 0;
+    margin: 0 auto;
+    max-width: 1000px;
+    transform-style: flat;
+
+    @media screen and (min-height: 500px) and (min-width: $min-width-card) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        height: 100vh;
+        padding: 48px 0;
+    }
+    
+    &__block {
+        // padding: 24px 0;
+
+        @media screen and (min-height: 500px) and (min-width: $min-width-card) {
+            flex-basis: 50%;
+            width: 100%;
+            padding: 0;
+        }
+
+        &--z_and_a {
+            clip-path: ellipse(46.59% 51.75% at 54.49% 47.61%);
+        }
+
+        &--z_from_top {
+            clip-path: ellipse(46.59% 51.75% at 54.49% 47.61%);
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+
+        @media screen and (min-height: 500px) and (min-width: $min-width-card) {
+            max-height: calc(50vh - 48px);
+        }
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .block {}
+}

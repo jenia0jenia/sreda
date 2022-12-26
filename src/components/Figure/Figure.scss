@@ -1,0 +1,23 @@
+.figure {
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    display: flex;
+    flex-basis: 50%;
+
+    &__textplace {
+        background-color: var(--color-purpule);
+        padding: 48px 24px;
+        clip-path: ellipse(354px 215px at 43.63% 29.43%);
+    }
+
+    &__text {
+        font-size: 22px;
+    }
+
+    &__img {
+        transform: translateZ(-1px) translateX(200px) scale(1.5);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

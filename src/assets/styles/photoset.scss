@@ -10,7 +10,9 @@
     padding-right: 20%;
 
     &__img {
-        width: 300px;
+        width: 200px;
+        height: 400px;
+        object-fit: cover;
         transition: .3s filter linear, 1s -webkit-filter linear;
         border-radius: 10px;
     }

@@ -20,8 +20,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "src/kampos"  ],
+    "src",
+    "src/kampos"
+  ],
   "exclude": [
     "src/kampos",
     "src/kampos*"

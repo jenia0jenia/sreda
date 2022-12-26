@@ -1,0 +1,29 @@
+.button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -50px;
+    border-radius: 50%;
+    padding: 20px 20px;
+    background-color: #fff;
+    transition: background-color .5s ease;
+    justify-content: center;
+    transition: all .5s ease;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: hotpink;
+}
+
+.button--left {
+    transform: translate(-50%, 0);
+    left: 0;
+}
+
+.button--right {
+    transform: translate(-50%, 0);
+    left: 100%;
+}

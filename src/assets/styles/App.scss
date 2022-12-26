@@ -1,11 +1,26 @@
-@use "./fonts.scss";
-@use "./nav.scss";
-@use "./photoset.scss";
-@use "./bubble.scss";
-@use "./figure.scss";
+@import "vars";
+
+@import "./nav.scss";
+@import "./menu.scss";
+@import "./button.scss";
+@import "./fonts.scss";
+@import "./photoset.scss";
+@import "./bubble.scss";
+@import "./card.scss";
+@import "./contacts.scss";
+@import "./massage.scss";
+
+:root {
+    --color-black: #333;
+    --color-purpule: #AC6785;
+    --color-purpule-light: #f5ceff;
+    --color-purpule-dark: #B94D7C;
+    --color-pale: #f5f5f5;
+}
 
 body {
     font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 0;
 
     &.about-page,
     &.massage-page {}
@@ -14,10 +29,27 @@ body {
         & .main {
             background: repeating-linear-gradient(to left, #e9c8b7, #e9c8b7 7%, #ef8e7b 7%, #ef8e7b 10%);
         }
+
+        & .main-body {
+            transform-style: preserve-3d;
+        }
+    }
+
+    & .main-body {
+    }
+
+
+    & .page {
     }
 }
 
-.massage-page {}
+.large-text {
+    color: white;
+    padding: 2px 8px;
+    line-height: 1.7;
+    letter-spacing: 0.8px;
+    border-bottom: 10px solid white;
+}
 
 .main {
     height: 100vh;
@@ -26,9 +58,6 @@ body {
     perspective: 2px;
     transform-style: preserve-3d;
 
-    &-body {
-        transform-style: preserve-3d;
-    }
 }
 
 .screen {
@@ -50,35 +79,6 @@ body {
     width: 100%;
 }
 
-.button {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    bottom: -50px;
-    border-radius: 50%;
-    padding: 20px 20px;
-    background-color: #fff;
-    transition: background-color .5s ease;
-    justify-content: center;
-    transition: all .5s ease;
-}
-
-.button:hover {
-    background-color: hotpink;
-}
-
-.button--left {
-    transform: translate(-50%, 0);
-    left: 0;
-}
-
-.button--right {
-    transform: translate(-50%, 0);
-    left: 100%;
-}
-
 .background-canvas {
     position: fixed;
     z-index: -1;
@@ -91,12 +91,14 @@ body {
 .container {
     max-width: 1240px;
     margin: 0 auto;
+    transform-style: preserve-3d;
 }
 
 .content {
     max-width: 900px;
     padding: 0 10px;
     margin: 0 auto;
+    transform-style: preserve-3d;
 }
 
 .page {
@@ -107,48 +109,8 @@ body {
     margin: 0 auto;
 }
 
-.main {}
-
-/* .menu */
-.menu-link {
-    display: inline-block;
-    color: white;
-    position: relative;
-    line-height: 2;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.menu-link::after {
-    content: "";
-    width: 50%;
-    height: 1px;
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    transform: translate(-50%, 0);
-    transition: all 0.5s ease;
-    background-color: white;
-}
-
-.menu-link:hover::after {
-    left: 0;
-    transform: translate(0, 0);
-    width: 100%;
-}
-
-
-/* // .menu */
-
-
 
 @media screen and (min-width: 899px) {
-    .main {}
-}
-
-.contacts {
-    width: 100%;
-    height: 100vh;
 }
 
 @media screen and (max-width: 680px) {
@@ -204,4 +166,33 @@ body {
         bottom: 0;
         transform: scale(-1, 1);
     }
+}
+
+.Monstera_svg {
+    position: absolute;
+    left: -10%;
+    bottom: 10%;
+    width: 30%;
+    max-width: 440px;
+    opacity: .86;
+    transform: translateZ(-0.3px);
+}
+
+.Oil_svg {
+    position: absolute;
+    right: 20%;
+    bottom: 20%;
+    max-width: 100px;
+    opacity: .86;
+    transform: translateZ(-0.4px);
+}
+
+
+.Oil2_svg {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    max-width: 100px;
+    opacity: .86;
+    transform: translateZ(-0.5px);
 }

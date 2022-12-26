@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-import "./SVGHands.scss"
-import Hands from "../../assets/img/png/hands.svg"
+import "./style.scss"
+import Hands from "../../assets/img/svg/hands.svg"
 
 export default function SVGHands() {
     useEffect(() => {
