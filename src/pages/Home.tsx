@@ -1,8 +1,11 @@
-import Intro from "../components/Intro";
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
 import BackGround from "../components/BackGround";
+import intro from "../assets/media/video/intro.mp4";
+import AlphaVideo from "../components/AlphaVideo";
 
 import MouseMoveClass from "../classes/mouse-move-class"
-import { useEffect } from "react";
 
 const mouseId = "jelly-blob"
 
@@ -34,8 +37,17 @@ export default function Home() {
     return (
         <>
             <div className="jelly-blob" id={mouseId}></div>
-            <Intro></Intro>
-            {/* <TransparentVideo></TransparentVideo> */}
+            <div className="intro">
+                <AlphaVideo src={intro} loop
+                    id="intro"
+                    preload="auto"
+                    crossOrigin="anonymous"
+                    muted
+                    sound="true"
+                    playsInline />
+                <NavLink className="button button--left" to={"/massage"}>массаж</NavLink>
+                <NavLink className="button button--right" to={"/about"}>обо мне</NavLink>
+            </div>
             <BackGround></BackGround>
         </>
     );

@@ -10,7 +10,9 @@ export default class MouseMoveClass {
     loopStarted = false;
 
     constructor(readonly options: { id: string }) {
-        window.addEventListener("mousemove", this.setFromEvent);
+        // window.addEventListener("mousemove", this.setFromEvent);
+        document.addEventListener("mousemove", this.onMouseMove);
+        document.addEventListener("touchmove", this.onTouchMove);
     }
 
     getScale(diffX: number, diffY: number) {
@@ -23,19 +25,33 @@ export default class MouseMoveClass {
         return (Math.atan2(diffY, diffX) * 180) / Math.PI;
     }
 
+    onMouseMove = (e: any) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        
+        this.setFromEvent(x, y);
+    }
+    
+    onTouchMove = (e: any) => {
+        const x = e.touches[0].clientX;
+        const y = e.touches[0].clientY;
+
+        this.setFromEvent(x, y);
+    }
+
     // Caluclate Everything Function
-    setFromEvent = (e: any) => {
+    setFromEvent = (x: number, y: number) => {
         // console.log('mousemove ->');
 
         // Mouse X and Y
-        const x = e.clientX;
-        const y = e.clientY;
+        // const x = e.clientX;
+        // const y = e.clientY;
         // console.log(x, y);
 
         // Animate Pos Object and calculate Vel Object Velocity
         gsap.to(pos, {
-            x: x,
-            y: y,
+            x,
+            y,
             ease: "expo.out",
             duration: 0.3,
             onUpdate: () => {
@@ -53,7 +69,7 @@ export default class MouseMoveClass {
 
     // Start Animation loop
     loop = () => {
-        console.log("loop");
+        // console.log("loop");
         const shape = document.getElementById(this.options.id);
         // console.log(shape);
 
@@ -84,8 +100,10 @@ export default class MouseMoveClass {
     };
 
     destroy = () => {
-        console.log("destroy");
-        window.removeEventListener("mousemove", this.setFromEvent);
+        // console.log("destroy");
+        // window.removeEventListener("mousemove", this.setFromEvent);
+        document.removeEventListener("mousemove", this.onMouseMove);
+        document.removeEventListener("touchmove", this.onTouchMove);
         this.loopStarted = false;
     };
 }

@@ -1,19 +1,16 @@
 .SVGHands {
     --zaura-height: 443px;
 
-    height: 100vh;
     font-size: 0;
     position: relative;
-    transform-style: preserve-3d;
-    max-width: 1000px;
     margin: 0 auto;
-
+    transform-style: preserve-3d;
+    text-align: center;
+    padding-top: 48px;
+    background-color: #fff;
+    
     &__img {
         max-width: 333px;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        transition: transform .2s ease;
+        position: relative;
     }
 }

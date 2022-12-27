@@ -1,0 +1,54 @@
+@import "../../assets/styles/vars";
+
+.StoryThree {
+    --zaura-height: 443px;
+
+    height: 80vh;
+    font-size: 0;
+    position: relative;
+    transform-style: preserve-3d;
+    min-height: 700px;
+    margin: 0 auto;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: repeating-linear-gradient(to left, #e9c8b7, #e9c8b7 40px, #ef8e7b 40px, #ef8e7b 60px);
+        z-index: -10;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 88%;
+        height: 81%;
+        top: 20%;
+        left: 6%;
+        background: white;
+        z-index: -1;
+        box-shadow: inset 10px 20px 30px 40px #e989ec30;
+        border-radius: 50% 50% 0% 0%;
+    }
+
+    &__zaura {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 0);
+        // transform: translate(-50%, 100%);
+        // transition: transform .5s ease .5s;
+
+        &__img {
+            max-width: 333px;
+        }
+    }
+
+
+}

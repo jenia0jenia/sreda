@@ -19,7 +19,9 @@
 
     &__wrapper {
         padding-left: 25vw;
-        margin: 48px 0;
+        padding: 48px 0;
+        transform-style: preserve-3d;
+
         
         @media screen and (max-width: 900px) {
             overflow-x: auto;

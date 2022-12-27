@@ -6,7 +6,7 @@ import Ticker from './ticker.js';
 const MAX_WIDTH = 854;
 const muteClass = "is-disabled"
 
-export default class WixAlphaClass {
+export default class AlphaClass {
   constructor(targetSelector, mediaSelector) {
     const KAMPOS = {
       effects: {

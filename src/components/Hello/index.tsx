@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./style.scss"
+import hands from  "../../assets/img/svg/hands.svg"
 
 export default function Hello() {
     useEffect(() => {
@@ -18,15 +19,18 @@ export default function Hello() {
 
     return (
         <div className="hello">
-            <img className="hello__lump" src={require("../../assets/img/png/turn-off.png")} alt="Лампа выкл" />
-            <img className="hello__lump" src={require("../../assets/img/png/turn-on.png")} alt="Лампа вкл" />
-            <img className="hello__plant" src={require("../../assets/img/png/monstera.png")} alt="Монстера Эскилето" />
-            {/* <img className="hello__declaration" src={require("../../assets/img/png/declaration.png")} alt="" /> */}
-            {/* <img className="hello__lump" src={require("../../assets/img/png/turn-on-two.png")} alt="" /> */}
-            <img src={require("../../assets/img/png/prayer_hands.png")} alt="Дюрер. Молящиеся руки" className="hello__prayerhands" />
-            {/* <img src={require("../../assets/img/png/declaration.png")} alt="" className="hello__declaration" /> */}
+            <img className="hello__lump" loading="lazy" src={require("../../assets/img/png/turn-off.png")} alt="Лампа выкл" />
+            <img className="hello__lump" loading="lazy" src={require("../../assets/img/png/turn-on.png")} alt="Лампа вкл" />
+            {/* <img src={require("../../assets/img/png/prayer_hands.png")} alt="Дюрер. Молящиеся руки" className="hello__prayerhands" /> */}
 
             <div className="hello__zaura">
+                <div className="hello__phone">
+                    <img className="hello__phone__img" loading="lazy" src={require("../../assets/img/png/phone_border.png")} alt="Телефон Зауры" />
+                    <img className="hello__phone__gif hello__phone__gif--cover" loading="lazy" src={hands} alt="Логотип Зауры" />
+                    <img className="hello__phone__gif hello__phone__gif--anim" loading="lazy" src={require("../../assets/media/a.gif")} alt="Инстаграм Зауры" />
+                    {/* <div className="hello__phone__gif">sreda massage</div> */}
+                </div>
+                <img className="hello__plant" loading="lazy" src={require("../../assets/img/png/monstera.png")} alt="Монстера Эскилето" />
                 <img className="hello__zaura__img" src={require("../../assets/img/png/z_in_the_sky.png")} alt="Заура смотрит в небо" />
             </div>
         </div>

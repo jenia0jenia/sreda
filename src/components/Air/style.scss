@@ -1,0 +1,32 @@
+@import "../../assets/styles/vars";
+
+.air {
+    padding: 48px 0;
+    text-align: center;
+    position: relative;
+    
+    @media screen and (max-width: $mobile-width) {
+        padding: 16px 0;
+
+        &.video {
+            padding-bottom: 0;
+        }
+    }
+
+    &__overlay {
+        background-color: var(--color-purpule);
+    }
+
+    &__text {
+        font-size: 28px;
+
+        @media screen and (max-width: $mobile-width) {
+            font-size: 20px;
+        }
+
+        span {
+            background-color: var(--color-purpule-dark);
+        }
+    }
+    
+}

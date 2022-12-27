@@ -1,13 +1,15 @@
+@import "../../assets/styles/vars";
+
 .hello {
     --zaura-height: 443px;
-    
+
     height: 100vh;
     font-size: 0;
     position: relative;
     transform-style: preserve-3d;
     max-width: 1000px;
     margin: 0 auto;
-    
+
     &__zaura {
         position: absolute;
         left: 50%;
@@ -19,40 +21,90 @@
         &__img {
             max-width: 333px;
             transform: translateZ(-0.1px);
-        }
-    }
+            
+            @media screen and (max-width: $mobile-width) {
+                max-width: 250px;
+            }
 
-    &__prayerhands {
-        max-width: 110px;
-        position: absolute;
-        left: 50%;
-        bottom: calc(var(--zaura-height) + 20px);
-        transform: translateZ(-0.8px) translateX(230px) scale(1.6);
-        object-fit: contain;
+        }
+
+        &:hover {
+
+            & .hello__phone__gif--cover {
+                opacity: 0;
+            }
+            
+            & .hello__phone__gif--anim {
+                opacity: 1;
+            }
+        }
     }
 
     &__plant {
         max-width: 250px;
         position: absolute;
-        left: 30%;
-        bottom: -10%;
-        transform: translateZ(-0.3px) translateX(330px);
+        left: 100%;
+        bottom: 30%;
+        transform: translateZ(-0.3px);
         object-fit: contain;
+        
+        @media screen and (max-width: $mobile-width) {
+            left: 80%;
+            max-width: 200px;
+        }
     }
-    
-    &__declaration {
-        max-width: 150px;
+
+    &__phone {
         position: absolute;
-        left: 50%;
-        bottom: 100px;
-        transform: translateZ(-0.3px) translateX(330px) scale(1.2);
-        object-fit: contain;
+        left: 0%;
+        bottom: 70px;
+        transform: translateZ(-0.3px) translateX(-130px) scale(1.2);
+        width: 70.5px;
+        height: 128px;
+        overflow: hidden;
+
+
+        @media screen and (max-width: $mobile-width) {
+            left: 20%;
+        }
+        
+        &__img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            z-index: 10;
+        }
+
+        &__gif {
+            width: calc(100% - 2px);
+            height: calc(100% - 26px);
+            top: 14px;
+            left: 1px;
+            position: absolute;
+            font-size: 13px;
+            
+            &--cover {
+                background-color: #fff;
+                z-index: 1;
+                box-sizing: border-box;
+                // padding: 16px 8px;
+                opacity: 1;
+                object-fit: contain;
+            }
+            
+            &--anim {
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0;
+            }
+        }
     }
 
     &__lump {
         position: absolute;
         left: 40%;
-        top: 20%;
+        top: 10%;
         transform: translateZ(0.3px) translateX(-160px) scale(1);
         object-fit: contain;
 
@@ -71,16 +123,20 @@
         &:hover:nth-child(2) {
             opacity: 1;
         }
+
+        @media screen and (max-width: $mobile-width) {
+            left: 50%;
+            max-width: 100px;
+        }
     }
-    
+
     &.is-open {
-        
+
         & .hello__zaura {
             transform: translate(-50%, 0);
         }
     }
-    
-    @media screen and (min-width: 899px) {
-    }
+
+    @media screen and (min-width: 899px) {}
 
 }

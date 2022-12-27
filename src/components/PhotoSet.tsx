@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Photoset } from "../classes/animation";
+import Figure from "../components/Figure";
 const PhotoSetID = 'PhotoSet'
 
 const photoSetData = [
@@ -24,29 +25,22 @@ export default function PhotoSet() {
                 <div className="photoset">
                     {photoSetData && photoSetData.map((photo, i) => {
                         return (
-                            <div className="photoset__item" key={i} /*style={{filter: `invert(${100 - 20 * i}%)`}}*/>
+                            <div className="photoset__item" key={i}>
                                 <img className="photoset__img" src={photo} alt={`массаж номер ${i}`} loading="lazy" />
                             </div>
                         )
                     })}
                     <div className="photoset__item">
-                        <video className="photoset__img" loop muted autoPlay>
+                        <video className="photoset__img" loop muted autoPlay preload="none">
                             <source
                                 src={require("../assets/media/video/back.mp4")}
                                 type="video/mp4"
                             />
-                            {/* <source
-                                src={require("../assets/media/video/back.webm")}
-                                type="video/webm"
-                            />
-                            <source
-                                src={require("../assets/media/video/back.ogv")}
-                                type="video/ogg"
-                            /> */}
                         </video>
                     </div>
                 </div>
             </div>
+            <Figure></Figure>
         </>
     );
 }

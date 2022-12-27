@@ -1,17 +1,20 @@
 import { useEffect } from "react";
 import Hello from "../components/Hello";
 import StoryTwo from "../components/StoryTwo";
-// import Rocket from "../components/~Rocket";
-// import SVGHands from "../components/SVGHands";
+import StoryThree from "../components/StoryThree";
+import SVGHands from "../components/SVGHands";
 import PhotoSet from "../components/PhotoSet";
 import Air from "../components/Air";
-import Hands from "../components/Hands";
-import Figure from "../components/Figure";
+// import Figure from "../components/Figure";
 // import { playPauseVideo } from "../helpers";
 
 const today = new Date();
-const text1 = `я прошла обучение в массажной школе «Оптима» в городе Челябинске в 2018 году. Сейчас <span>${today.getMonth() + 1} месяц ${today.getFullYear()} год</span>, как массаж - это моё основное дело и любимое ремесло. Работаю в нескольких массажных салонах Санкт-Петербурга и веду частную практику. Обладаю техниками классического, лимфодренжаного, спортивного, антицеллюлитного, рефлекторно-сегментарного (что это такое?) массажа`
-const text2 = `Какой запрос? Улучшение телесного качества жизни, расслабление и облегчение боли в мышцах, отдых и способ выдоха, коррекция фигуры, вспомогательная процедура при спорте и обновлении`
+const months = 'январь,февраль,март,апрель,май,июнь,июль,август,сентябрь,октябрь,ноябрь,декабрь'.split(',');
+const experience = today.getFullYear() - 2018
+
+const text1 = `я прошла обучение в массажной школе «Оптима» в городе <a href="https://en.wikipedia.org/wiki/Chelyabinsk" target="_blank">Челябинске</a> в 2018 году. Сейчас ${months[today.getMonth()]} месяц, ${today.getFullYear()} год, \$\{${experience}\} год как массаж - это моё основное дело и любимое ремесло. Работаю в нескольких массажных салонах <a href="https://en.wikipedia.org/wiki/Saint_Petersburg" target="_blank">Санкт-Петербурга</a> и веду частную практику. Обладаю техниками классического, лимфодренжаного, спортивного, антицеллюлитного, рефлекторно-сегментарного (<a href="https://www.massage.ru/articles/segmentarnyy-massazh-priyomy-pokazaniya-rekomendacii" target="_blank">что это такое?</a>) массажа`
+const text2 = `Обоюдно, с первого сеанса – бережно, подключая дыхание, находя точки безопасности и точки отклика, от которых можем работать. Я во время первого массажа очень часто вербально (словами через рот) спрашиваю про комфортность силы нажима, про приемлемость и так далее. Массаж не должен быть хрустящим и пугающим – моё личное мнение)`
+const text3 = `Приветствую человека, который хочет на массаж. Приветствую человека, который заботится о себе и хочет начать «что-то делать, чтобы стало легче». Приветствую человека, который ищет «своего» массажиста. Приветствую человека, который видит массаж как вспомогательный шаг в трансформации тела. Приветствую человека, который любит себя и хочет выдохнуть на массаже – морально и физически отдохнуть. Приветствую Вас`
 
 
 export default function About() {
@@ -33,11 +36,11 @@ export default function About() {
                 <Air video={true} text={text1}></Air>
                 <StoryTwo></StoryTwo>
                 <Air text={text2}></Air>
+                <StoryThree></StoryThree>
                 <PhotoSet></PhotoSet>
-                <Figure></Figure>
-                {/* <Rocket></Rocket> */}
-                {/* <Air text="Что будем делать? Определиться с массажем и техникой. Обычно первый сеанс – это обсуждение и общий лимфодренажный тире классический массаж тела."></Air> */}
-                <Hands></Hands>
+                {/* <Figure></Figure> */}
+                <Air text={text3}></Air>
+                <SVGHands></SVGHands>
             </div>
         </>
     );

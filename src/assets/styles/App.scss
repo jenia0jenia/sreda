@@ -27,7 +27,34 @@ body {
 
     &.about-page {
         & .main {
-            background: repeating-linear-gradient(to left, #e9c8b7, #e9c8b7 7%, #ef8e7b 7%, #ef8e7b 10%);
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 2px;
+            background: repeating-linear-gradient(to top, #e9c8b7, #e9c8b7 80px, #ef8e7b 80px, #ef8e7b 140px);
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: repeating-linear-gradient(to left, #e9c8b7, #e9c8b7 80px, #ef8e7b 80px, #ef8e7b 140px);
+                z-index: -1;
+
+                @media screen and (min-width: $mobile-width) {
+                    animation-name: bgLeftRight;
+                    animation-timing-function: cubic-bezier(0.315, 0.025, 0.755, 1.000);
+                    animation-duration: 9s;
+                    animation-direction: alternate;
+                    animation-iteration-count: infinite;
+                }
+
+            }
+
         }
 
         & .main-body {
@@ -35,12 +62,10 @@ body {
         }
     }
 
-    & .main-body {
-    }
+    & .main-body {}
 
 
-    & .page {
-    }
+    & .page {}
 }
 
 .large-text {
@@ -48,17 +73,9 @@ body {
     padding: 2px 8px;
     line-height: 1.7;
     letter-spacing: 0.8px;
-    border-bottom: 10px solid white;
 }
 
-.main {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 2px;
-    transform-style: preserve-3d;
-
-}
+.main {}
 
 .screen {
     margin: 0 auto;
@@ -110,8 +127,7 @@ body {
 }
 
 
-@media screen and (min-width: 899px) {
-}
+@media screen and (min-width: 899px) {}
 
 @media screen and (max-width: 680px) {
     body {
@@ -160,11 +176,21 @@ body {
     bottom: 0;
     text-align: left;
 
+    @media screen and (max-width: $mobile-width) {
+        position: static;
+    }
+
     & canvas {
         position: absolute;
         left: 0;
         bottom: 0;
         transform: scale(-1, 1);
+
+
+        @media screen and (max-width: $mobile-width) {
+            position: static;
+        }
+
     }
 }
 
@@ -195,4 +221,15 @@ body {
     max-width: 100px;
     opacity: .86;
     transform: translateZ(-0.5px);
+}
+
+
+@keyframes bgLeftRight {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 500px 0;
+    }
 }

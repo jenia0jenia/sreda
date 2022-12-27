@@ -3,6 +3,8 @@
     margin: 0 auto;
     display: flex;
     flex-basis: 50%;
+    height: 50vh;
+    background-color: aqua;
 
     &__textplace {
         background-color: var(--color-purpule);
@@ -15,9 +17,12 @@
     }
 
     &__img {
-        transform: translateZ(-1px) translateX(200px) scale(1.5);
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        left: 40%;
         object-fit: contain;
+        transform: translateZ(-0.6px) scale(1.6);
+        top: 20px;
     }
 }
