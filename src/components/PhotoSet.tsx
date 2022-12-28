@@ -25,7 +25,7 @@ export default function PhotoSet() {
                     {photoSetData && photoSetData.map((photo, i) => {
                         return (
                             <div className="photoset__item" key={i}>
-                                <img className="photoset__img" src={photo} alt={`массаж номер ${i}`} loading="lazy" />
+                                <img className="photoset__img" src={photo} alt={`массаж номер ${i}`} />
                             </div>
                         )
                     })}
