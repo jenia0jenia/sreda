@@ -1,10 +1,12 @@
+@import "../../assets/styles/vars";
+
 .figure {
     transform-style: preserve-3d;
     margin: 0 auto;
     display: flex;
     flex-basis: 50%;
-    height: 50vh;
-    background-color: aqua;
+    // height: 50vh;
+    // background-color: aqua;
 
     &__textplace {
         background-color: var(--color-purpule);
@@ -18,11 +20,17 @@
 
     &__img {
         position: absolute;
-        width: 240px;
-        height: 240px;
-        left: 40%;
+        width: 340px;
+        height: 340px;
+        left: 50%;
         object-fit: contain;
-        transform: translateZ(-0.6px) scale(1.6);
+        transform: translateZ(-0.6px) scale(0.6);
         top: 20px;
+
+        @media screen and (max-width: $min-width-card) {
+            left: 54%;
+            top: 126%;
+        }
     }
+
 }

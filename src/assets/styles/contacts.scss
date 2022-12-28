@@ -8,8 +8,8 @@
         height: 100%;
         padding: 48px;
 
-        @media screen and (max-width: $max-width) {
-            padding: 16px;
+        @media screen and (max-width: $mobile-width) {
+            padding: 48px 24px;
         }
     }
     

@@ -108,15 +108,7 @@
         transform: translateZ(0.3px) translateX(-160px) scale(1);
         object-fit: contain;
 
-        &:first-child {
-            opacity: 1;
-        }
-
         &:nth-child(2) {
-            opacity: 0;
-        }
-
-        &:hover:first-child {
             opacity: 0;
         }
 

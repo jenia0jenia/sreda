@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Photoset } from "../classes/animation";
-import Figure from "../components/Figure";
 const PhotoSetID = 'PhotoSet'
 
 const photoSetData = [
@@ -40,7 +39,6 @@ export default function PhotoSet() {
                     </div>
                 </div>
             </div>
-            <Figure></Figure>
         </>
     );
 }

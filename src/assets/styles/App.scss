@@ -27,10 +27,6 @@ body {
 
     &.about-page {
         & .main {
-            height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-            perspective: 2px;
             background: repeating-linear-gradient(to top, #e9c8b7, #e9c8b7 80px, #ef8e7b 80px, #ef8e7b 140px);
 
 
@@ -75,7 +71,12 @@ body {
     letter-spacing: 0.8px;
 }
 
-.main {}
+.main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
 
 .screen {
     margin: 0 auto;
@@ -190,7 +191,7 @@ body {
         @media screen and (max-width: $mobile-width) {
             position: static;
         }
-
+        
     }
 }
 
@@ -202,6 +203,12 @@ body {
     max-width: 440px;
     opacity: .86;
     transform: translateZ(-0.3px);
+
+    @media screen and (max-width: $min-width-card) {
+        left: -17%;
+        bottom: 40%;
+        width: 40%;
+    }
 }
 
 .Oil_svg {
@@ -211,6 +218,9 @@ body {
     max-width: 100px;
     opacity: .86;
     transform: translateZ(-0.4px);
+    @media screen and (max-width: $min-width-card) {
+        bottom: -47%;
+    }
 }
 
 
@@ -221,6 +231,9 @@ body {
     max-width: 100px;
     opacity: .86;
     transform: translateZ(-0.5px);
+    @media screen and (max-width: $min-width-card) {
+        right: -10%;
+    }
 }
 
 

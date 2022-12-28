@@ -8,7 +8,7 @@
     position: relative;
     transform-style: preserve-3d;
     min-height: 700px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
 
 
     &::before {
@@ -47,6 +47,27 @@
 
         &__img {
             max-width: 333px;
+            transform: translateY(50px);
+            
+            @media screen and (max-width: $mobile-width) {
+                max-width: 233px;
+            }
+
+            &--right,
+            &--left {
+                position: absolute;
+                bottom: 30px;
+                max-width: 150px;
+                z-index: -1;
+                opacity: 0.6;
+            }
+
+            &--left {
+                left: -100px;
+            }
+            &--right {
+                right: -100px;
+            }
         }
     }
 

@@ -5,7 +5,7 @@ import Monstera from "../assets/img/svg/monstera.svg"
 import Oil from "../assets/img/svg/oil.svg"
 import Oil2 from "../assets/img/svg/oil_2.svg"
 import { useEffect } from "react";
-
+import Figure from "../components/Figure";
 
 export default function Massage() {
     useEffect(() => {
@@ -20,6 +20,7 @@ export default function Massage() {
             <img className="Monstera_svg" src={Monstera} alt="Монстера Эскилето" />
             <img className="Oil_svg" src={Oil} alt="Массажное масло Yves Rocher" />
             <img className="Oil2_svg" src={Oil2} alt="Массажное масло Yves Rocher" />
+            <Figure></Figure>
 
             <div className="main-body">
                 <div className="page">
@@ -80,10 +81,6 @@ export default function Massage() {
                         </div>
                     </div>
                 </div>
-
-                {/* <Contacts /> */}
-                {/* <BubbleWords></BubbleWords> */}
-
             </div>
         </>
     );

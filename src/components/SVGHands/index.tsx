@@ -7,28 +7,27 @@ import AlphaVideo from "../AlphaVideo";
 
 export default function SVGHands() {
     useEffect(() => {
-        // const mainbody = document.querySelector<HTMLElement>('.main')
-        // const img = document.querySelector<HTMLElement>(".SVGHands__img")
-        // if (!img || !mainbody) {
-        //     return
-        // }
-        // let factor = 1.0;
+        const mainbody = document.querySelector<HTMLElement>('.main')
+        const img = document.querySelector<HTMLElement>(".SVGHands__img")
+        if (!img || !mainbody) {
+            return
+        }
+        let factor = 1.0;
+        let width = 333
 
-        // mainbody.addEventListener("wheel", (event) => {
-        //     // console.log('document');
-        //     // console.log(mainbody.offsetHeight);
-        //     // console.log(mainbody.scrollTop);
-        //     // console.log(mainbody.scrollHeight);
-        //     if (mainbody.offsetHeight + mainbody.scrollTop >= mainbody.scrollHeight) {
-        //         img.style.transform = `scale(${factor})`;
-        //         factor += 0.1
-        //     }
-        // })
+        img.addEventListener("click", (event) => {
+            // console.log('document');
+            console.log(img.style.width);
+            // console.log(mainbody.scrollTop);
+            // console.log(mainbody.scrollHeight);
+            img.style.width = width * factor + "px";
+            factor += 0.1
+        })
     }, [])
     return (
         <>
             <div className="SVGHands">
-                <img className="SVGHands__img" loading="lazy" src={image} alt="Руки Зауры" />
+                <img className="SVGHands__img" src={image} alt="Руки Зауры" />
                 <div className="videohands">
                     {/* <AlphaVideo src={hands} id="hands" muted autoPlay loop /> */}
                 </div>

@@ -1,14 +1,13 @@
 .video-place {
     position: relative;
     margin: 0 auto;
+    height: 391px;
 
     & video {
         display: none;
     }
 
-    & canvas {
-
-    }
+    & canvas {}
 
     &.sound {
         &::after {
@@ -22,9 +21,9 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            background-image: url("../../assets/img/icons/sound_off.svg");      
+            background-image: url("../../assets/img/icons/sound_off.svg");
         }
-        
+
         &.is-disabled {
             &::after {
                 background-image: url("../../assets/img/icons/sound_on.svg");
