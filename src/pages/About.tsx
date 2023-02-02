@@ -39,6 +39,7 @@ export default function About() {
                 <PhotoSet></PhotoSet>
                 <Air text={text3}></Air>
                 <SVGHands></SVGHands>
+                <a className="link-back" href="/massage">Массаж</a>
             </div>
         </>
     );

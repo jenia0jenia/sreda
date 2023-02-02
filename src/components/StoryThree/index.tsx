@@ -14,8 +14,8 @@ export default function StoryThree() {
                     {/* <div className="StoryThree__zaura__nimb StoryThree__zaura__nimb--white" id="nimb2"></div>
                     <div className="StoryThree__zaura__nimb StoryThree__zaura__nimb--black" id="nimb3"></div> */}
                     <img className="StoryThree__zaura__img" src={require("../../assets/img/png/z_super.png")} alt="Заура супервуман" />
-                    <img className="StoryThree__zaura__img StoryThree__zaura__img--left"  src={require("../../assets/img/png/z_super.png")} alt="Заура супервуман" />
-                    <img className="StoryThree__zaura__img StoryThree__zaura__img--right"  src={require("../../assets/img/png/z_super.png")} alt="Заура супервуман" />
+                    <img className="StoryThree__zaura__img StoryThree__zaura__img--left"  loading="lazy" src={require("../../assets/img/png/z_super.png")} alt="Заура супервуман" />
+                    <img className="StoryThree__zaura__img StoryThree__zaura__img--right"  loading="lazy" src={require("../../assets/img/png/z_super.png")} alt="Заура супервуман" />
                 </div>
             </div>
         </>

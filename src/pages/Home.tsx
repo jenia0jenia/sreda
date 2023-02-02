@@ -48,6 +48,7 @@ export default function Home() {
                 <NavLink className="button button--left" to={"/massage"}>массаж</NavLink>
                 <NavLink className="button button--right" to={"/about"}>обо мне</NavLink>
             </div>
+            <h1 className="title">Привет! Я Заура́. Человек и массажист</h1>
             <BackGround></BackGround>
         </>
     );

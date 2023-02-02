@@ -16,10 +16,7 @@ export default function SVGHands() {
         let width = 333
 
         img.addEventListener("click", (event) => {
-            // console.log('document');
             console.log(img.style.width);
-            // console.log(mainbody.scrollTop);
-            // console.log(mainbody.scrollHeight);
             img.style.width = width * factor + "px";
             factor += 0.1
         })

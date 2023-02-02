@@ -71,6 +71,27 @@ body {
     letter-spacing: 0.8px;
 }
 
+.title {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    padding: 24px;
+    text-shadow: 4px 10px 7px var(--color-black);
+
+}
+.link-back {
+    display: block;
+    width: 250px;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    background-color: var(--color-purpule-dark);
+    padding: 24px;
+    // text-shadow: 4px 10px 7px var(--color-black);
+    transform: rotate(10deg);
+    margin: -40px auto 0;
+}
+
 .main {
     height: 100vh;
     overflow-x: hidden;
@@ -90,6 +111,7 @@ body {
     max-width: 203px;
     margin: 0 auto;
     align-self: center;
+    margin-bottom: 96px;
 }
 
 .page__overlay {

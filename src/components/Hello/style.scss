@@ -10,6 +10,16 @@
     max-width: 1000px;
     margin: 0 auto;
 
+    &__speach {
+        font-size: 6vh;
+        max-width: 340px;
+        text-align: center;
+        margin: 0px 0px 0 auto;
+        padding: 5vw 8vw 0 0;
+        color: white;
+        text-shadow: 4px 10px 7px var(--color-black);
+    }
+
     &__zaura {
         position: absolute;
         left: 50%;
@@ -108,11 +118,11 @@
         transform: translateZ(0.3px) translateX(-160px) scale(1);
         object-fit: contain;
 
-        &:nth-child(2) {
+        &:nth-of-type(2) {
             opacity: 0;
         }
 
-        &:hover:nth-child(2) {
+        &:hover:nth-of-type(2) {
             opacity: 1;
         }
 
