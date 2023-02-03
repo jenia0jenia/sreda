@@ -73,17 +73,19 @@ body {
 
 .title {
     color: white;
-    font-size: 48px;
+    font-size: 28px;
     text-align: center;
     padding: 24px;
-    text-shadow: 4px 10px 7px var(--color-black);
+    font-weight: 400;
 
 }
+
 .link-back {
     display: block;
     width: 250px;
     color: white;
     font-size: 48px;
+    font-weight: 100;
     text-align: center;
     background-color: var(--color-purpule-dark);
     padding: 24px;
