@@ -4,6 +4,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Massage from "./pages/Massage";
+import NotFound from "./pages/NotFound";
 
 function resize() {
     if (window.innerWidth < 900) {
@@ -104,6 +105,7 @@ export default function App() {
                     <Route index element={<Home />}></Route>
                     <Route path="about" element={<About />} />
                     <Route path="massage" element={<Massage />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </div>

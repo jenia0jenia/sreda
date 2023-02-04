@@ -22,6 +22,29 @@ body {
     /* overflow-x: hidden; */
 }
 
+h1 {
+    font-size: large;
+}
+
+.NotFound {
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-direction: column;
+    height: 100vh;
+
+    &Link {
+        
+        &s{
+            display: flex;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+    }
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
